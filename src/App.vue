@@ -1,7 +1,17 @@
 <template>
   <div class="container">
     <app-new-quote @quoteAdded="addQuote"></app-new-quote>
-    <app-quote-grid :quotes="quotes"></app-quote-grid>
+    <app-quote-grid
+      :quotes="quotes"
+      @quoteDeleted="deleteQuote"
+    ></app-quote-grid>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div class="alert alert-info">
+          Info: Click on a quote to delete it
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,18 +26,21 @@ export default Vue.extend({
   data() {
     return {
       maxQuotes: 10,
-      quotes: new Array<Quote>()
+      quotes: new Array<Quote>(),
     };
   },
   methods: {
     addQuote(newQuote: Quote) {
       this.quotes.push(newQuote);
-    }
+    },
+    deleteQuote(index: number) {
+      this.quotes.splice(index, 1);
+    },
   },
   components: {
     appQuoteGrid: QuoteGrid,
-    appNewQuote: NewQuote
-  }
+    appNewQuote: NewQuote,
+  },
 });
 </script>
 
