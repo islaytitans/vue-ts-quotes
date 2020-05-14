@@ -30,7 +30,7 @@ export default Vue.extend({
   data() {
     return {
       maxQuotes: 10,
-      quotes: new Array<Quote>(),
+      quotes: new Array<Quote>()
     };
   },
   methods: {
@@ -42,7 +42,7 @@ export default Vue.extend({
     },
     deleteQuote(index: number) {
       this.quotes.splice(index, 1);
-    },
+    }
   },
   components: {
     appQuoteGrid: QuoteGrid,
