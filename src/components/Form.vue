@@ -116,6 +116,13 @@
           </select>
         </div>
       </div>
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"
+        >
+          <app-switch v-model="dataSwitch"></app-switch>
+        </div>
+      </div>
       <hr />
       <div class="row">
         <div
@@ -143,7 +150,7 @@
             </ul>
             <p>Gender: {{ userData.gender }}</p>
             <p>Priority: {{ selectedPriority }}</p>
-            <p>Switched:</p>
+            <p>Switched: {{ dataSwitch }}</p>
           </div>
         </div>
       </div>
@@ -153,6 +160,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Switch from "@/components/Switch.vue";
 export default Vue.extend({
   data() {
     return {
@@ -166,7 +174,11 @@ export default Vue.extend({
       sendMail: new Array<unknown>(),
       priorities: ["High", "Medium", "Low"],
       selectedPriority: "High",
+      dataSwitch: true
     };
+  },
+  components: {
+    appSwitch: Switch,
   },
 });
 </script>

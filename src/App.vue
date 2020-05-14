@@ -48,7 +48,7 @@ export default Vue.extend({
     appQuoteGrid: QuoteGrid,
     appNewQuote: NewQuote,
     appHeader: Header,
-    appForm: Form
+    appForm: Form,
   },
 });
 </script>
