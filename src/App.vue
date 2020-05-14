@@ -13,6 +13,7 @@
         </div>
       </div>
     </div>
+    <app-form></app-form>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import QuoteGrid from "./components/QuoteGrid.vue";
 import NewQuote from "./components/NewQuote.vue";
 import Quote from "./interfaces/Quote";
 import Header from "./components/Header.vue";
+import Form from "./components/Form.vue";
 
 export default Vue.extend({
   name: "App",
@@ -46,6 +48,7 @@ export default Vue.extend({
     appQuoteGrid: QuoteGrid,
     appNewQuote: NewQuote,
     appHeader: Header,
+    appForm: Form
   },
 });
 </script>
