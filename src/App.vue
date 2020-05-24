@@ -15,6 +15,7 @@
     </div>
     <app-form></app-form>
     <app-another-form></app-another-form>
+    <app-directive></app-directive>
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import Quote from "./interfaces/Quote";
 import Header from "./components/Header.vue";
 import Form from "./components/Form.vue";
 import AnotherForm from "./components/AnotherForm.vue";
+import Directive from "./components/Directive.vue";
 
 export default Vue.extend({
   name: "App",
@@ -51,7 +53,8 @@ export default Vue.extend({
     appNewQuote: NewQuote,
     appHeader: Header,
     appForm: Form,
-    appAnotherForm: AnotherForm
+    appAnotherForm: AnotherForm,
+    appDirective: Directive
   },
 });
 </script>
