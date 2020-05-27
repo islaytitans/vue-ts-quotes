@@ -29,7 +29,7 @@ export default Vue.extend({
         //   el.onclick = function() {
         //       bindings.value();
         //   }
-        const type = bindings.arg;
+        const type = bindings?.arg?.toString() ?? "";
         const fn = bindings.value;
         el.addEventListener(type, fn);
       },

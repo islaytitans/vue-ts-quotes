@@ -13,9 +13,15 @@
         </div>
       </div>
     </div>
+    <hr />
     <app-form></app-form>
+    <hr />
     <app-another-form></app-another-form>
+    <hr />
     <app-directive></app-directive>
+    <hr />
+    <app-filters-mixins></app-filters-mixins>
+    <hr />
   </div>
 </template>
 
@@ -28,6 +34,7 @@ import Header from "./components/Header.vue";
 import Form from "./components/Form.vue";
 import AnotherForm from "./components/AnotherForm.vue";
 import Directive from "./components/Directive.vue";
+import FiltersMixins from "./components/FiltersMixins.vue";
 
 export default Vue.extend({
   name: "App",
@@ -54,7 +61,8 @@ export default Vue.extend({
     appHeader: Header,
     appForm: Form,
     appAnotherForm: AnotherForm,
-    appDirective: Directive
+    appDirective: Directive,
+    appFiltersMixins: FiltersMixins
   },
 });
 </script>
