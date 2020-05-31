@@ -22,6 +22,8 @@
     <hr />
     <app-filters-mixins></app-filters-mixins>
     <hr />
+    <app-animations></app-animations>
+    <hr />
   </div>
 </template>
 
@@ -35,6 +37,7 @@ import Form from "./components/Form.vue";
 import AnotherForm from "./components/AnotherForm.vue";
 import Directive from "./components/Directive.vue";
 import FiltersMixins from "./components/FiltersMixins.vue";
+import Animations from "./components/Animations.vue";
 
 export default Vue.extend({
   name: "App",
@@ -62,7 +65,8 @@ export default Vue.extend({
     appForm: Form,
     appAnotherForm: AnotherForm,
     appDirective: Directive,
-    appFiltersMixins: FiltersMixins
+    appFiltersMixins: FiltersMixins,
+    appAnimations: Animations
   },
 });
 </script>
