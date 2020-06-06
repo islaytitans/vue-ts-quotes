@@ -10,13 +10,19 @@
         <br />
         <br />
         <transition name="fade">
-          <div class="alert alert-info" v-if="show">This is some info</div>
+          <div class="alert alert-info" v-if="show">1 This is some info</div>
         </transition>
         <transition name="slide" type="transition">
-          <div class="alert alert-info" v-if="show">This is some info</div>
+          <div class="alert alert-info" v-if="show">2 This is some info</div>
         </transition>
         <transition name="fade" appear>
-          <div class="alert alert-info" v-if="!show">This is some info</div>
+          <div class="alert alert-info" v-if="!show">3 This is some info</div>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__bounce"
+          leave-active-class="animate__animated animate__shakeX"
+        >
+          <div class="alert alert-info" v-if="!show">4 This is some info</div>
         </transition>
       </div>
     </div>
