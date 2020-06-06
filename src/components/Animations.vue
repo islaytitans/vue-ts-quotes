@@ -28,7 +28,9 @@
           enter-active-class="animate__animated animate__bounce"
           leave-active-class="animate__animated animate__shakeX"
         >
-          <div class="alert alert-success" v-if="!show">4 This is some info</div>
+          <div class="alert alert-success" v-if="!show">
+            4 This is some info
+          </div>
         </transition>
         <transition :name="alertAnimation" mode="out-in">
           <div class="alert alert-danger" v-if="show" key="info">

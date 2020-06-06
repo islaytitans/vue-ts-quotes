@@ -4,6 +4,7 @@
     <input
       type="text"
       id="first-name"
+      class="form-control"
       :value="firstName"
       @input="nameChanged(true, $event)"
     />
@@ -11,6 +12,7 @@
     <input
       type="text"
       id="last-name"
+      class="form-control"
       :value="lastName"
       @input="nameChanged(false, $event)"
     />

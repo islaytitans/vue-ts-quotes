@@ -13,13 +13,24 @@
           <!-- Store Data? Yes/No -->
           <app-full-name v-model="fullName"></app-full-name>
           <label for="mail">Mail</label>
-          <input type="text" id="mail" v-model="mail" />
+          <input type="text" id="mail" v-model="mail" class="form-control" />
           <label for="password">Password</label>
-          <input type="password" id="password" v-model="password" />
+          <input
+            type="password"
+            id="password"
+            v-model="password"
+            class="form-control"
+          />
           <label for="store-data">Store data?</label>
           <input type="checkbox" id="store-data" v-model="storeData" />
           <hr />
-          <button type="submit" @click.prevent="submitForm">Submit</button>
+          <button
+            type="submit"
+            @click.prevent="submitForm"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
 
           <!-- Exercise 2 -->
           <!-- Only display the Form if it has NOT been submitted -->
