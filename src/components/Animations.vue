@@ -15,6 +15,9 @@
         <transition name="slide" type="transition">
           <div class="alert alert-info" v-if="show">This is some info</div>
         </transition>
+        <transition name="fade" appear>
+          <div class="alert alert-info" v-if="!show">This is some info</div>
+        </transition>
       </div>
     </div>
   </div>
