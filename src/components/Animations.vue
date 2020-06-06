@@ -19,16 +19,24 @@
           <div class="alert alert-info" v-if="show">1 This is some info</div>
         </transition>
         <transition name="slide" type="transition">
-          <div class="alert alert-info" v-if="show">2 This is some info</div>
+          <div class="alert alert-danger" v-if="show">2 This is some info</div>
         </transition>
         <transition name="fade" appear>
-          <div class="alert alert-info" v-if="!show">3 This is some info</div>
+          <div class="alert alert-light" v-if="!show">3 This is some info</div>
         </transition>
         <transition
           enter-active-class="animate__animated animate__bounce"
           leave-active-class="animate__animated animate__shakeX"
         >
-          <div class="alert alert-info" v-if="!show">4 This is some info</div>
+          <div class="alert alert-success" v-if="!show">4 This is some info</div>
+        </transition>
+        <transition :name="alertAnimation" mode="out-in">
+          <div class="alert alert-danger" v-if="show" key="info">
+            5 This is some info
+          </div>
+          <div class="alert alert-warning" v-if="!show" key="warning">
+            6 This is some info
+          </div>
         </transition>
       </div>
     </div>
