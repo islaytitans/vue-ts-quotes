@@ -9,7 +9,13 @@
         </button>
         <br />
         <br />
-        <transition name="fade">
+        <select v-model="alertAnimation" class="form-control">
+          <option value="fade">Fade</option>
+          <option value="slide">Slide</option>
+        </select>
+        <br />
+        <br />
+        <transition :name="alertAnimation">
           <div class="alert alert-info" v-if="show">1 This is some info</div>
         </transition>
         <transition name="slide" type="transition">
@@ -35,6 +41,7 @@ export default Vue.extend({
   data() {
     return {
       show: false,
+      alertAnimation: "fade",
     };
   },
 });
