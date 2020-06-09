@@ -1,6 +1,6 @@
 export const lengthAwareMixin = {
   computed: {
-    count() {
+    count(): string {
       return this.text + " " + this.text.length;
     },
   },
