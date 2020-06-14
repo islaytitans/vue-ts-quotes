@@ -12,8 +12,8 @@ export default Vue.extend({
   methods: {
     switched(isOn: boolean): void {
       this.$emit("input", isOn);
-    },
-  },
+    }
+  }
 });
 </script>
 

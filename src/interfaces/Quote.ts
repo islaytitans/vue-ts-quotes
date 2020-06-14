@@ -1,3 +1,3 @@
 export default interface Quote {
-    Text: String,
+  Text: string;
 }

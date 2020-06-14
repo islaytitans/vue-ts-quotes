@@ -3,7 +3,7 @@ import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
-Vue.filter('characterCount', function (value: string) {
+Vue.filter("characterCount", function(value: string) {
   return value + " " + value.length;
 });
 

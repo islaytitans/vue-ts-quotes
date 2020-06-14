@@ -33,7 +33,7 @@ export default Vue.extend({
       }
 
       this.$emit("input", name);
-    },
+    }
   },
   computed: {
     firstName() {
@@ -41,8 +41,8 @@ export default Vue.extend({
     },
     lastName() {
       return this.value.split(" ")[1];
-    },
-  },
+    }
+  }
 });
 </script>
 

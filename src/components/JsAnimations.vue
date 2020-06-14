@@ -4,7 +4,9 @@
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <h1>JS Animations</h1>
         <hr />
-        <button class="btn btn-primary" @click="load = !load">Load / Remove Element</button>
+        <button class="btn btn-primary" @click="load = !load">
+          Load / Remove Element
+        </button>
         <br />
         <br />
         <transition
@@ -18,7 +20,10 @@
           @leave-cancelled="leaveCancelled"
           :css="false"
         >
-          <div style="width: 300px; height: 100px; background-color: lightgreen" v-if="load"></div>
+          <div
+            style="width: 300px; height: 100px; background-color: lightgreen"
+            v-if="load"
+          ></div>
         </transition>
       </div>
     </div>
@@ -86,5 +91,4 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-</style>
+<style></style>

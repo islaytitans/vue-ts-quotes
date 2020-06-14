@@ -18,11 +18,11 @@ export default Vue.extend({
   methods: {
     deleteQuote(index: number) {
       this.$emit("quoteDeleted", index);
-    },
+    }
   },
   components: {
-    appQuote: Quote,
-  },
+    appQuote: Quote
+  }
 });
 </script>
 

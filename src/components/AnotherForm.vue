@@ -72,17 +72,17 @@ export default Vue.extend({
       mail: "",
       password: "",
       storeData: false,
-      isSubmitted: false,
+      isSubmitted: false
     };
   },
   methods: {
     submitForm() {
       this.isSubmitted = true;
-    },
+    }
   },
   components: {
-    appFullName: FullName,
-  },
+    appFullName: FullName
+  }
 });
 </script>
 

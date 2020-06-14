@@ -23,7 +23,7 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     quoteCount: Number,
-    maxQuotes: Number,
-  },
+    maxQuotes: Number
+  }
 });
 </script>

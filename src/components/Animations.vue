@@ -4,7 +4,9 @@
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <h1>CSS Animations</h1>
         <hr />
-        <button class="btn btn-primary" @click="show = !show">Show alert</button>
+        <button class="btn btn-primary" @click="show = !show">
+          Show alert
+        </button>
         <br />
         <br />
         <select v-model="alertAnimation" class="form-control">
@@ -26,17 +28,29 @@
           enter-active-class="animate__animated animate__bounce"
           leave-active-class="animate__animated animate__shakeX"
         >
-          <div class="alert alert-success" v-if="!show">4 This is some info</div>
+          <div class="alert alert-success" v-if="!show">
+            4 This is some info
+          </div>
         </transition>
         <transition :name="alertAnimation" mode="out-in">
-          <div class="alert alert-danger" v-if="show" key="info">5 This is some info</div>
-          <div class="alert alert-warning" v-if="!show" key="warning">6 This is some info</div>
+          <div class="alert alert-danger" v-if="show" key="info">
+            5 This is some info
+          </div>
+          <div class="alert alert-warning" v-if="!show" key="warning">
+            6 This is some info
+          </div>
         </transition>
         <hr />
         <button
           class="btn btn-primary"
-          @click="selectedComponent == 'app-success-alert' ? selectedComponent = 'app-danger-alert' : selectedComponent = 'app-success-alert'"
-        >Toggle Component</button>
+          @click="
+            selectedComponent == 'app-success-alert'
+              ? (selectedComponent = 'app-danger-alert')
+              : (selectedComponent = 'app-success-alert')
+          "
+        >
+          Toggle Component
+        </button>
         <br />
         <br />
         <transition name="fade" mode="out-in">
@@ -54,7 +68,9 @@
               v-for="(number, index) in numbers"
               :key="index"
               style="cursor: pointer;"
-            >{{ number }}</li>
+            >
+              {{ number }}
+            </li>
           </transition-group>
         </ul>
       </div>

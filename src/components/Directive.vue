@@ -32,8 +32,8 @@ export default Vue.extend({
         const type = bindings?.arg?.toString() ?? "";
         const fn = bindings.value;
         el.addEventListener(type, fn);
-      },
-    },
+      }
+    }
   },
   methods: {
     clicked() {
@@ -44,8 +44,8 @@ export default Vue.extend({
     },
     mouseLeave() {
       console.log("Mouse leave");
-    },
-  },
+    }
+  }
 });
 </script>
 

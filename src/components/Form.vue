@@ -170,24 +170,24 @@ export default Vue.extend({
         email: "",
         password: "",
         age: 16,
-        gender: "Male",
+        gender: "Male"
       },
       message: "Default message",
       sendMail: new Array<unknown>(),
       priorities: ["High", "Medium", "Low"],
       selectedPriority: "High",
       dataSwitch: true,
-      isSubmitted: false,
+      isSubmitted: false
     };
   },
   methods: {
     submitForm(): void {
       this.isSubmitted = true;
-    },
+    }
   },
   components: {
-    appSwitch: Switch,
-  },
+    appSwitch: Switch
+  }
 });
 </script>
 

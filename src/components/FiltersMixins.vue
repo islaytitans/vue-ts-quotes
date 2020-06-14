@@ -32,19 +32,19 @@ export default Vue.extend({
   mixins: [lengthAwareMixin],
   data() {
     return {
-      text: "hello",
+      text: "hello"
     };
   },
   filters: {
     reverseText(value: string) {
       return [...value].reverse().join("");
-    },
+    }
   },
   computed: {
     reverse() {
       return [...this.text].reverse().join("");
-    },
-  },
+    }
+  }
 });
 </script>
 
