@@ -18,6 +18,7 @@
           @leave="leave"
           @after-leave="afterLeave"
           @leave-cancelled="leaveCancelled"
+          :css="false"
         >
           <div
             style="width: 100px; height: 100px; background-color: lightgreen"
@@ -58,6 +59,7 @@ export default Vue.extend({
     },
     leave(el: HTMLElement, done) {
       console.log("leave");
+      done();
     },
     afterLeave(el: HTMLElement) {
       console.log("afterLeave");
