@@ -46,7 +46,7 @@ export default Vue.extend({
       this.elementWidth = 100;
       el.style.width = this.elementWidth + "px";
     },
-    enter(el: HTMLElement, done) {
+    enter(el: HTMLElement, done: any) {
       console.log("enter");
       let round = 1;
       const interval = setInterval(() => {
@@ -69,7 +69,7 @@ export default Vue.extend({
       this.elementWidth = 300;
       el.style.width = this.elementWidth + "px";
     },
-    leave(el: HTMLElement, done) {
+    leave(el: HTMLElement, done: any) {
       console.log("leave");
       let round = 1;
       const interval = setInterval(() => {
