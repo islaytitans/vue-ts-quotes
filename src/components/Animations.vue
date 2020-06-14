@@ -4,9 +4,7 @@
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <h1>CSS Animations</h1>
         <hr />
-        <button class="btn btn-primary" @click="show = !show">
-          Show alert
-        </button>
+        <button class="btn btn-primary" @click="show = !show">Show alert</button>
         <br />
         <br />
         <select v-model="alertAnimation" class="form-control">
@@ -28,18 +26,37 @@
           enter-active-class="animate__animated animate__bounce"
           leave-active-class="animate__animated animate__shakeX"
         >
-          <div class="alert alert-success" v-if="!show">
-            4 This is some info
-          </div>
+          <div class="alert alert-success" v-if="!show">4 This is some info</div>
         </transition>
         <transition :name="alertAnimation" mode="out-in">
-          <div class="alert alert-danger" v-if="show" key="info">
-            5 This is some info
-          </div>
-          <div class="alert alert-warning" v-if="!show" key="warning">
-            6 This is some info
-          </div>
+          <div class="alert alert-danger" v-if="show" key="info">5 This is some info</div>
+          <div class="alert alert-warning" v-if="!show" key="warning">6 This is some info</div>
         </transition>
+        <hr />
+        <button
+          class="btn btn-primary"
+          @click="selectedComponent == 'app-success-alert' ? selectedComponent = 'app-danger-alert' : selectedComponent = 'app-success-alert'"
+        >Toggle Component</button>
+        <br />
+        <br />
+        <transition name="fade" mode="out-in">
+          <component :is="selectedComponent"></component>
+        </transition>
+        <hr />
+        <button class="btn btn-primary" @click="addItem">Add Item</button>
+        <br />
+        <br />
+        <ul class="list-group">
+          <transition-group name="slide">
+            <li
+              class="list-group-item"
+              @click="removeItem(index)"
+              v-for="(number, index) in numbers"
+              :key="index"
+              style="cursor: pointer;"
+            >{{ number }}</li>
+          </transition-group>
+        </ul>
       </div>
     </div>
   </div>
@@ -47,17 +64,35 @@
 
 <script lang="ts">
 import Vue from "vue";
+import DangerAlert from "@/components/DangerAlert.vue";
+import SuccessAlert from "@/components/SuccessAlert.vue";
+
 export default Vue.extend({
   data() {
     return {
       show: false,
       alertAnimation: "fade",
+      selectedComponent: "app-success-alert",
+      numbers: [1, 2, 3, 4, 5]
     };
   },
+  methods: {
+    addItem() {
+      const pos = Math.floor(Math.random() * this.numbers.length);
+      this.numbers.splice(pos, 0, this.numbers.length + 1);
+    },
+    removeItem(index: number): void {
+      this.numbers.splice(index, 1);
+    }
+  },
+  components: {
+    appDangerAlert: DangerAlert,
+    appSuccessAlert: SuccessAlert
+  }
 });
 </script>
 
-<style>
+<style scoped>
 .fade-enter {
   opacity: 0;
 }
@@ -94,6 +129,13 @@ export default Vue.extend({
   animation: slide-out 1s ease-out forwards;
   transition: opacity 1s;
   opacity: 0;
+  /* needed for the smooth transition of the remove element from transition group  */
+  position: absolute;
+}
+
+/* transition-group element class only */
+.slide-move {
+  transition: transform 1s;
 }
 
 @keyframes slide-in {
