@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <app-quiz></app-quiz>
     <app-header :quoteCount="quotes.length" :maxQuotes="maxQuotes"></app-header>
     <app-new-quote @quoteAdded="addQuote"></app-new-quote>
     <app-quote-grid
@@ -40,6 +41,7 @@ import Directive from "./components/Directive.vue";
 import FiltersMixins from "./components/FiltersMixins.vue";
 import Animations from "./components/Animations.vue";
 import JsAnimations from "./components/JsAnimations.vue";
+import Quiz from "./components/Quiz/Quiz.vue";
 
 export default Vue.extend({
   name: "App",
@@ -69,7 +71,8 @@ export default Vue.extend({
     appDirective: Directive,
     appFiltersMixins: FiltersMixins,
     appAnimations: Animations,
-    appJsAnimations: JsAnimations
+    appJsAnimations: JsAnimations,
+    appQuiz: Quiz
   }
 });
 </script>
